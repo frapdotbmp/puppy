@@ -1,10 +1,16 @@
-#ifndef PUPPY
-#define PUPPY
+#ifndef __PUPPY__
+#define __PUPPY__
 #include <xcb/xcb.h>
 
-void init();
-void create_win();
+extern xcb_connection_t  *dpy;
+extern xcb_screen_t      *scr;
 
-int check_for_wm();
+extern xcb_window_t      root;
+
+int initwm();
+int initscreen();
+int checkforwm();
+
+void closewm();
 
 #endif
